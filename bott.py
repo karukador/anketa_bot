@@ -2,7 +2,7 @@ import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 from telebot import types
 import json
-from mytoken import my_token
+from mytoken import my_token #отдельный файл, из которого импортируется токен бота
 
 bot = telebot.TeleBot(token=my_token)
 
