@@ -122,6 +122,11 @@ def handle_message(message):
             del users_data[user_id]
             save_user_data()
 
+@bot.message_handler(func=lambda m: True)
+def unknown_command(message):
+ known_commands = ['/start', '/help', '/person', '/news']
+ if message.text.split()[0] not in known_commands:
+     bot.reply_to(message, "Некорректный ввод. Введите /help для просмотра доступных функций")
 
 save_user_data()
 
